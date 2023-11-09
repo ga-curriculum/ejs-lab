@@ -69,5 +69,29 @@ Now that you have this template created, modify the existing route in **`server.
 
 ### Exercise 2
 
+Create a **`details.ejs`** file inside of your `views` directory.  Once created, add boilerplate.
 
+Once this file is created, define a get route called `/details` that will render this template.  As a part of rendering the template, pass the `APP_USER` as a value in the locals object for the view template.  
 
+Modify the template such that it will display the `username`, `isAdmin`, and `sales` values in the template.
+
+### Exercise 3
+
+Create an **`inventory.ejs`** file inside of your `views` directory.  Once created, add the following boilerplate:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory</title>
+</head>
+<body>
+</body>
+</html>
+```
+
+Once this file is created, define a get route called `/inventory` that will render this template.  As a part of rendering the template, pass the `APP_USER` as a value in the locals object for the view template.  
+
+Within the template, write logic that will display the name and quantity of each item from the objects in the inventory array if the value for `isAdmin` is true.  As a part of this template, provide a message that displays on the page if the value for `isAdmin` is false.
