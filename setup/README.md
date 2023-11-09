@@ -14,10 +14,11 @@ mkdir ejs-lab
 cd ejs-lab
 ```
 
-Then, create a **`server.js`** file:
+Then, create a **`server.js`** file and a **`views`** directory.  Your views directory will hold the various **`ejs`** files you will create during this lab:
 
 ```bash
 touch server.js
+mkdir views
 ```
 
 Once you have created the **`server.js`** file, initialize this directory for npm and install the express package:
