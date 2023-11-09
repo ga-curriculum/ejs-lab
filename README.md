@@ -1,22 +1,17 @@
-# ![[tktk Module Name]](./assets/tktk-hero.png)
+# ![[EJS Lab]](./assets/tktk-hero.png)
 
 ## About
 
-tktk Write a short but descriptive summary of the content in this module. Introduce the lab. What will the students build in this lab?
+This lab provides us with an opportunity to work with EJS templates from an Express application.
 
 ## Prerequisites
 
-- tktk
+- Express
+- EJS Templates
 
 ## Time to complete
 
 Estimated time to complete core lab exercise: **tktk min**
-
-## Starter code
-
-tktk If there is not a starter code repo that students will fork and clone to start this lab, then this section and all of its content should be removed.
-
-🟢 [Starter code](#tktk-repository-for-starter-code)
 
 ## Content
 
@@ -30,14 +25,6 @@ tktk If there is not a starter code repo that students will fork and clone to st
 ## Solution code
 
 🏁 [tktk Solution code](#tktk-external-repo-link-url)
-
-## Deployed sites
-
-tktk If there is not a deployed site related to this module this section and all of its content should be removed.
-
-🌐 [Live site](#tktk-deployed-app-url)
-
-🐙 [Repository](#tktk-repository-for-deployed-app)
 
 ## Internal resources
 
