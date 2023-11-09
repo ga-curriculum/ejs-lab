@@ -1,3 +1,53 @@
-# ![[tktk Module Name] - Setup](./assets/hero.png)
+# ![EJS Lab - Setup](./assets/tktkhero.png)
 
-tktk Write setup steps specific to the lab.
+## Setup 
+Open your Terminal application and navigate to your **`~/code/ga/labs`** directory:
+
+```bash
+cd ~/code/ga/labs
+```
+
+Make a new directory called **`ejs-lab`**, then enter this directory:
+
+```bash
+mkdir ejs-lab
+cd ejs-lab
+```
+
+Then, create a **`server.js`** file:
+
+```bash
+touch server.js
+```
+
+Once you have created the **`server.js`** file, initialize this directory for npm and install the express package:
+
+```bash
+npm init
+```
+Hit the return key for every prompt you are given in the initialization process.
+
+```bash
+npm install express
+```
+
+Add the following code to your **`server.js`** file:
+
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello There!');
+});
+
+app.listen(3000);
+```
+
+Start your server using `nodemon`:
+
+```bash
+nodemon server.js
+```
+
+Lastly, navigate to `localhost:3000` in your browser to be greeted with 'Hello There!' in the browser window
