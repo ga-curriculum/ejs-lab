@@ -95,3 +95,24 @@ Create an **`inventory.ejs`** file inside of your `views` directory.  Once creat
 Once this file is created, define a get route called `/inventory` that will render this template.  As a part of rendering the template, pass the `APP_USER` as a value in the locals object for the view template.  
 
 Within the template, write logic that will display the name and quantity of each item from the objects in the inventory array if the value for `isAdmin` is true.  As a part of this template, provide a message that displays on the page if the value for `isAdmin` is false.
+
+### Exercise 4
+
+Create an **`inventory-details.ejs`** file inside of your `views` directory.  Once created, add the following boilerplate:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Details</title>
+</head>
+<body>
+</body>
+</html>
+```
+
+Once this file is created, define a get route called `/inventory/:id` that will render this template.  As a part of rendering the template, pass the `APP_USER` as a value in the locals object for the view template.  
+
+Within the template, write logic that will display the details of one item in the inventory if the value in place of the `id` req.params maps to an id value in one of the inventory objects.  As a part of this template, provide a message that displays on the page if the id provided does not correspond with an object.
