@@ -28,8 +28,15 @@ npm init
 ```
 Hit the return key for every prompt you are given in the initialization process.
 
+We next need to install both the `express` and `ejs` modules. We can install both modules in a single line:
+
 ```bash
-npm install express
+npm install express ejs
+```
+
+Open this project in `VS Code`:
+```bash
+code .
 ```
 
 Add the following code to your **`server.js`** file:
