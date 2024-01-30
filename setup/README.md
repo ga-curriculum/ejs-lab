@@ -1,4 +1,4 @@
-# ![EJS Lab - Setup](./assets/tktkhero.png)
+# ![EJS Lab - Setup](./assets/hero.png)
 
 ## Setup 
 Open your Terminal application and navigate to your **`~/code/ga/labs`** directory:
