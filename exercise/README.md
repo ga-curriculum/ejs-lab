@@ -1,4 +1,4 @@
-# ![EJS Lab - Exercise](./assets/tktkhero.png)
+# ![EJS Lab - Exercise](./assets/hero.png)
 
 ## Introduction
 
