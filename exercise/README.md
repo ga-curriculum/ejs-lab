@@ -60,12 +60,14 @@ Create an **`index.ejs`** file inside of your `views` directory.  Once created, 
   <title>Index</title>
 </head>
 <body>
-  <h1>Hello there!</h1>
+  <h1>Index Page</h1>
 </body>
 </html>
 ```
 
 Now that you have this template created, modify the existing route in **`server.js`** such that the template is now _rendered_ from the response.
+
+> 👀 When you refresh your browser, it should now be rendering the `<h1>` with the content `Index Page`.
 
 ### Exercise 2
 
