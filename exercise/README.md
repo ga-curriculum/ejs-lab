@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab provides an opportunity to practice defining routes that respond to requests by rendering data in templates.
+In this lab, you'll construct a dynamic website for a fictional restaurant, "The Green Byte Bistro." This hands-on experience is designed to solidify your understanding of using EJS templates with an Express.js application.
 
 ## A quick note before you dive in
 
@@ -10,76 +10,74 @@ Don't hesitate to collaborate with your classmates when working through labs.
 
 If you get stuck during the lab, we recommend revisiting the lesson materials first. They're designed to provide you with the information and examples that will help you complete the exercises.
 
+## What You'll Build
+You're going to create a vibrant, interactive website for The Green Byte Bistro. This website will feature:
+
+- **Homepage:** Displays key details of the bistro - name, address, and contact info.
+- **Nav Bar:** Includes links to various sections of the site.
+- **Menu Page:** Showcases the menu, sorted into mains, desserts, and sides.
+- **Category Page:** Generates pages for each menu type, using route parameters for content rendering.
+
 ## Lab exercises
 
-First, copy and paste the following data to be used in the lab above your defined route in **`server.js`**:
+First, copy and paste the following data to be used in the lab above your `/` route in **`server.js`**:
 
 ```javascript
-const APP_USER = {
-  username: 'Bob Loblaw',
-  isAdmin: true,
-  sales: 5000,
-  inventory: [
+const RESTAURANT = {
+  name: 'The Green Byte Bistro',
+  isOpen: true,
+  address: '742 Evergreen Rd, Mapleview, OS 45502',
+  phone: '555-321-9876',
+  menu: [
     { 
       id: 1,
-      name: 'A best selling book',
-      qty: 500,
-      rating: 5 
+      name: 'Quantum Quinoa Mushroom Burger',
+      price: 13.00,
+      rating: 4,
+      category: 'mains',
+      details: 'A vegetarian burger made with a quinoa and mushroom patty, it will take you to another realm.'
     },
     { 
       id: 2,
-      name: 'Trendy water bottle',
-      qty: 1500,
-      rating: 5 
+      name: 'Binary Berry Cheesecake',
+      price: 8.00,
+      rating: 3,
+      category: 'desserts',
+      details: 'A creamy cheesecake bursting with flavor. A mix of berries in every byte.'
     },
     { 
       id: 3,
-      name: 'Used VCR',
-      qty: 40,
-      rating: 5 
+      name: 'Recursive Rigatoni',
+      price: 17.00,
+      rating: 5,
+      category: 'mains',
+      details: 'A classic rigatoni pasta dish, layered with rich tomato sauce and herbs. You\'ll keep coming back for more.'
     },
     { 
       id: 4,
-      name: 'Dog collar',
-      qty: 10,
-      rating: 5 
+      name: 'Pumpkin Pi Squared',
+      price: 10.00,
+      rating: 5,
+      category: 'desserts',
+      details: 'A delightful pumpkin dessert, squared and spiced to perfection.'
+    },
+    { 
+      id: 5,
+      name: 'Fibonacci String Bean Fries',
+      price: 5.00,
+      rating: 5,
+      category: 'sides',
+      details: 'Crispy and lightly seasoned string bean fries, served in a pattern for a fun twist.'
     }
   ]
 }
 ```
-### Exercise 1
 
-Create an **`index.ejs`** file inside of your `views` directory.  Once created, add the following boilerplate:
+### Exercise 1: Create a homepage
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index</title>
-</head>
-<body>
-  <h1>Index Page</h1>
-</body>
-</html>
-```
+### Create a view
 
-Now that you have this template created, modify the existing route in **`server.js`** such that the template is now _rendered_ from the response.
-
-> 👀 When you refresh your browser, it should now be rendering the `<h1>` with the content `Index Page`.
-
-### Exercise 2
-
-Create a **`details.ejs`** file inside of your `views` directory.  Once created, add boilerplate.
-
-Once this file is created, define a get route called `/details` that will render this template.  As a part of rendering the template, pass the `APP_USER` as a value in the locals object for the view template.  
-
-Modify the template such that it will display the `username`, `isAdmin`, and `sales` values in the template.
-
-### Exercise 3
-
-Create an **`inventory.ejs`** file inside of your `views` directory.  Once created, add the following boilerplate:
+1. Create an **`home.ejs`** file inside of your `views` directory. Once created, add the following boilerplate:
 
 ```html
 <!DOCTYPE html>
@@ -87,20 +85,70 @@ Create an **`inventory.ejs`** file inside of your `views` directory.  Once creat
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventory</title>
+  <title>Home</title>
 </head>
 <body>
+  <h1>Home Page</h1>
 </body>
 </html>
 ```
 
-Once this file is created, define a get route called `/inventory` that will render this template.  As a part of rendering the template, pass the `APP_USER` as a value in the locals object for the view template.  
+#### Modify the route
 
-Within the template, write logic that will display the name and quantity of each item from the objects in the inventory array if the value for `isAdmin` is true.  As a part of this template, provide a message that displays on the page if the value for `isAdmin` is false.
+2. Now modify the existing route that handles the homepage `/` request. Update this route to render the `home.ejs` template in response to a request.
 
-### Exercise 4
+> 👀 When you refresh your browser, it should now be rendering the `<h1>` with the content `Home Page`.
 
-Create an **`inventory-details.ejs`** file inside of your `views` directory.  Once created, add the following boilerplate:
+#### Send data to view
+
+3. Using the `locals object`, send the `RESTAURANT` data from `server.js` to the `home.ejs` view.
+
+4. Using EJS tags, update your HTML to display the restaurant details. Include `name`, `address`, and `phone`.
+
+5. Update the `<title>` of your `home` page to dynamically match the restaurant name. 
+
+6. ***Level-Up:*** Include conditional rendering to add the line "Yes we are open!" to the page if the restaurant `isOpen`, and "Sorry, we are closed." otherwise.
+
+<br>
+
+### Exercise 2: Create a nav bar
+
+#### Create a Nav partial
+
+1. Create a `partials` directory inside you `views` directory.
+2. Inside `partials`, create a `nav.ejs` file.
+
+Add the following code to `nav.ejs`:
+
+```html
+<nav>
+  <a href="/">Home</a>
+  <a href="/menu">Full Menu</a>
+</nav>
+```
+
+#### Add partial to `home` page
+
+Add your partial file to the top of the `<body>` in `home.ejs`
+
+```html
+<%- include('./partials/nav') %>
+```
+
+> 👀  Refresh to see a new nav bar appear.
+
+#### Create a new route
+
+3. Create a new `menu` route in `server.js`
+
+    - `GET` route to `/menu` 
+    - `res.render()` a `menu.ejs` view *(created next)*
+
+#### Create a matching view
+
+4. Create a `menu.ejs` view for this new route in the `views` directory.
+
+5. Add boilerplate HTML to your new view:
 
 ```html
 <!DOCTYPE html>
@@ -108,13 +156,64 @@ Create an **`inventory-details.ejs`** file inside of your `views` directory.  On
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventory Details</title>
+  <title>Menu</title>
 </head>
 <body>
+  <h1>Full Menu</h1>
 </body>
 </html>
 ```
 
-Once this file is created, define a get route called `/inventory/:id` that will render this template.  As a part of rendering the template, pass the `APP_USER` as a value in the locals object for the view template.  
+> 👀 Test your new view in the browser. You should see "Full Menu" on the page.
 
-Within the template, write logic that will display the details of one item in the inventory if the value in place of the `id` req.params maps to an id value in one of the inventory objects.  As a part of this template, provide a message that displays on the page if the id provided does not correspond with an object.
+6.  Add your `nav.ejs` partial to your menu page.
+
+#### Send data to view
+
+1. Using the `locals object`, pass the `menu` array data from `server.js` to the `menu.ejs` view.
+
+2. In `menu.ejs`, Use a `forEach()` loop, to render each of the menu items and their details to the page. Include `name`, `price`, `rating` and `details` for each item.
+
+3. ***Level Up***: Using conditionals, refactor your code to render the items under three separate `<h2>` headers based on the category of the dish- `"Mains"` `"Desserts"` or `"Sides"`.
+
+<br>
+
+### Exercise 3: Create a separate page for menu categories
+
+#### Create new links in the nav
+
+1. Add the following new links to `nav.ejs`
+
+```html
+<nav>
+  <a href="/">Home</a>
+  <a href="/menu">Full Menu</a>
+  <!-- new links below-->
+  <a href="/menu/mains">Mains</a>
+  <a href="/menu/desserts">Desserts</a>
+  <a href="/menu/sides">Sides</a>
+</nav>
+```
+
+#### Create a new route
+
+1. Create a new `/menu/:category` route in `server.js`
+
+    - `GET` route to `/menu/:category` that uses route parameters to determine the menu category being passed to that route 
+    - `res.render()` a `category.ejs` view *(created next)*
+
+#### Create a matching view
+
+4. Create a `category.ejs` view for this new route in the `views` directory.
+
+5. Use `menu.ejs` as an example and add boilerplate HTML to your new view. Make sure to add the `nav` partial to the top of the page.
+
+#### Send data to view
+
+1. Using the `locals object`, pass an array of data called `menuItems` containing ***only*** items that match the `req.params` category to the `category.ejs` view. Best practice dictates that this data should be filtered *before* it is sent to the view. This can be done in the route handler with a `for loop` or the `.filter()` method.
+
+2. Send the category `name` in the `locals object` along with the filtered menu data. *Level-Up: Capitalize the first letter for a better UI experience.*
+
+3. Once in the view, use a `forEach()` loop, to render each of the menu items and their details to the page. Include `name`, `price`, `rating` and `details` for each item.
+
+4. Add the name of the category to the `<title>` of the page and to an `<h1>`.
