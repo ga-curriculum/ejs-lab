@@ -6,7 +6,7 @@ In this module, you're going to create a dynamic website for our fictional resta
 
 ## Prerequisites
 
-- Express
+- Intro to Express
 - EJS
 
 ## Time to complete
