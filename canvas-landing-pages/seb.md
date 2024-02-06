@@ -15,4 +15,4 @@ Estimated time to complete core lab exercise: **90 min**
 
 ## Level Up
 
-🚀 [Add a Star](../level-up/README.md)⭐
+🚀 [Add a Star ⭐](../level-up/README.md)
