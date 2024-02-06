@@ -1,4 +1,4 @@
-# ![EJS Lab](../assets/tktk-hero.png)
+# ![EJS Lab](../assets/hero.png)
 
 ## About
 
