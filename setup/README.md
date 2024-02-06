@@ -1,20 +1,30 @@
 # ![EJS Lab - Setup](./assets/hero.png)
 
-## Setup 
-Open your Terminal application and navigate to your **`~/code/ga/labs`** directory:
+## Setup
+
+Open your Terminal application and navigate to your `~/code/ga/labs` directory:
 
 ```bash
 cd ~/code/ga/labs
 ```
 
-Make a new directory called **`ejs-lab`**, then enter this directory:
+Make a new repository on [GitHub](https://github.com/) named ejs-lab.  
+
+Clone a copy of your remote repo locally by using the `git clone` command:
 
 ```bash
-mkdir ejs-lab
+git clone https://git.generalassemb.ly/<your-username>/ejs-lab.git
+```
+
+> 📚 Note: In the link above, where it says `<your-username>`, you should see the username from your GitHub account.
+
+Next, `cd` into your new cloned directory, `ejs-lab`:
+
+```bash
 cd ejs-lab
 ```
 
-Then, create a **`server.js`** file and a **`views`** directory.  Your views directory will hold the various **`ejs`** files you will create during this lab:
+Then, create a **`server.js`** file and a **`views`** directory. Your views directory will hold the various **`ejs`** files you will create during this lab:
 
 ```bash
 touch server.js
@@ -24,17 +34,17 @@ mkdir views
 Once you have created the **`server.js`** file, initialize this directory for npm and install the express package:
 
 ```bash
-npm init
+npm init -y
 ```
-Hit the return key for every prompt you are given in the initialization process.
 
-We next need to install both the `express` and `ejs` modules. We can install both modules in a single line:
+Next, install both the `express` and `ejs` modules. We can install both modules in a single line:
 
 ```bash
 npm install express ejs
 ```
 
-Open this project in `VS Code`:
+Open the project's folder in your code editor:
+
 ```bash
 code .
 ```

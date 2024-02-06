@@ -2,16 +2,16 @@
 
 ## About
 
-This lab provides us with an opportunity to work with EJS templates from an Express application.
+In this lab, you'll construct a dynamic website for a fictional restaurant, "The Green Byte Bistro." This hands-on experience is designed to solidify your understanding of using EJS templates with an Express.js application.
 
 ## Prerequisites
 
 - Express
-- EJS Templates
+- EJS
 
 ## Time to complete
 
-Estimated time to complete core lab exercise: **tktk min**
+Estimated time to complete core lab exercise: **90 min**
 
 ## Content
 
@@ -20,7 +20,7 @@ Estimated time to complete core lab exercise: **tktk min**
 
 ## Level Up
 
-🚀 [Partial Templates](./level-up/partial-templates.md) 
+🚀 [Add a Star ⭐](./level-up/README.md)
 
 ## Solution code
 
