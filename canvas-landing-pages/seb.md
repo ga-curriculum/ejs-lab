@@ -2,7 +2,7 @@
 
 ## About
 
-In this lab, you'll construct a dynamic website for a fictional restaurant, "The Green Byte Bistro." This hands-on experience is designed to solidify your understanding of using EJS templates with an Express.js application.
+In this module, you're going to create a dynamic website for our fictional restaurant, "The Green Byte Bistro." This lab is all about practically applying your skills, using EJS templates in an Express application.
 
 ## Time to complete
 
