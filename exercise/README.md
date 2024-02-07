@@ -75,7 +75,7 @@ const RESTAURANT = {
 
 ### Exercise 1: Create a homepage
 
-### Create a view
+#### Create a view
 
 1. Create an **`home.ejs`** file inside of your `views` directory. Once created, add the following boilerplate:
 
