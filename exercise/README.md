@@ -1,4 +1,7 @@
-# ![EJS Lab - Exercise](./assets/hero.png)
+<h1>
+  <span class="headline">EJS Lab</span>
+  <span class="subhead">Exercise</span>
+</h1>
 
 ## Introduction
 
