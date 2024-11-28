@@ -1,6 +1,6 @@
 <h1>
   <span class="headline">EJS Lab</span>
-  <span class="subhead">README</span>
+  <span class="subhead">Level Up</span>
 </h1>
 
 ### Exercise 4: Level Up
